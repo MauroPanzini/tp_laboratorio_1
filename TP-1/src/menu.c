@@ -22,29 +22,22 @@ float pedirKm(){
 	return km;
 }
 
-// Pedimos el precio de Aeronlineas Argentinas //
-/**
- * @brief pide al usuario ingresar el precio de Aerolineas Argentinas
- * @return retorna el precio
- */
-float pedirPrecioAa(){
-	float precioAa;
-	printf("\nIngrese el precio del vuelo de Aalineas Argentinas: ");
-	scanf("\n%f", &precioAa);
+// Pedimos el precio de las aerolineas //
 
-	return precioAa;
-}
 /**
- * @brief pide al usuario ingresar el precio de Latam
- * @return retorna el precio
+ * @brief nos toma por consola el precio de la aerolinea
+ * @param mensaje le pedimos un mensaje para mostrar
+ * @return retorna el precio que ingresamos
  */
-// Pedimos el precio de Latam //
-float pedirPrecioLatam(){
-	float precioLatam;
-	printf("\nIngrese el precio del vuelo de Latam: ");
-	scanf("\n%f", &precioLatam);
-
-	return precioLatam;
+float pedirPrecio(char* mensaje){
+	float precio;
+	printf("\n%s", mensaje);
+	scanf("\n%f", &precio);
+	while(precio<1){
+		printf("\nError, ingrese un valor mayor a 0");
+			scanf("\n%f", &precio);
+	}
+	return precio;
 }
 
 // Calculamos el costo de AA y Latam, luego la diferencia de precio entre ambas //

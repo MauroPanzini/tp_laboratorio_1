@@ -28,8 +28,8 @@ int main(void) {
 			case 2:							//Case 2 pedimos ingresar los precios de cada empresa
 				if (flagCase2 == 1) {
 					flagCase2 = 0;
-					precioAa = pedirPrecioAa();
-					precioLatam = pedirPrecioLatam();
+					precioAa = pedirPrecio("Ingrese el precio de Aerolineas Argentinas: ");
+					precioLatam = pedirPrecio("Ingrese el precio de Latam: ");
 				}
 				break;
 			case 3:							//Case 3 hacemos las operaciones pertinentes en el orden que fueron dadas en la consigna
@@ -52,7 +52,7 @@ int main(void) {
 				if (flagCase1 == 0 && flagCase2 == 0 && flagCase3 == 0) {
 					mostrarCostos(debitoLatam, creditoLatam, btcLatam, precioXkmLatam, debitoAa, creditoAa, btcAa, precioXkmAa, difPrecio);
 					flagCase1 = 1;
-					flagCase2 = 1;
+					flagCase2 = 1;			//Reinicia las flags para poder volver a ingresar datos
 					flagCase3 = 1;
 				}
 				else{															//En caso de que no se hayan ingresado datos, o no se haya operado con ellos

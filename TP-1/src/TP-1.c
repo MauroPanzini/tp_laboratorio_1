@@ -51,6 +51,9 @@ int main(void) {
 			case 4:																//Case 4 mostramos los resultados de las operaciones del Case 3
 				if (flagCase1 == 0 && flagCase2 == 0 && flagCase3 == 0) {
 					mostrarCostos(debitoLatam, creditoLatam, btcLatam, precioXkmLatam, debitoAa, creditoAa, btcAa, precioXkmAa, difPrecio);
+					flagCase1 = 1;
+					flagCase2 = 1;
+					flagCase3 = 1;
 				}
 				else{															//En caso de que no se hayan ingresado datos, o no se haya operado con ellos
 					printf("No hay informacion para mostrar");					// no nos mostrará nada

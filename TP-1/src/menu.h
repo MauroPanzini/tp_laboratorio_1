@@ -13,7 +13,7 @@ float pedirPrecioLatam();
 float calcularCostos(float precio, float km, int operacion);
 float diferenciaPrecio(float precioLatam, float precioAa);
 float diferenciaPrecio(float precioLatam, float precioAa);
-int mostrarCostos(float debitoLatam, float creditoLatam, float btcLatam, float precioXkmLatam, float debitoAa, float creditoAa, float btcAa, float precioXkmAa, float difPrecio);
+void mostrarCostos(float debitoLatam, float creditoLatam, float btcLatam, float precioXkmLatam, float debitoAa, float creditoAa, float btcAa, float precioXkmAa, float difPrecio);
 
 
 

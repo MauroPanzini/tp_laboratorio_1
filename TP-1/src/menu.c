@@ -10,34 +10,23 @@
 #include <string.h>
 #define UN_BTC 4606954.55
 
-// Pedimos los km //
-/**
- * @brief pide al usuario ingresar los km por consola
- * @return retorna los km
- */
-float pedirKm(){
-	float km;
-	printf("\nIngrese la cantidad de KM: ");
-	scanf("\n%f", &km);
-	return km;
-}
 
-// Pedimos el precio de las aerolineas //
+// funcion para pedir datos numericos //
 
 /**
- * @brief nos toma por consola el precio de la aerolinea
+ * @brief nos toma por consola el dato numerico mayor a 0
  * @param mensaje le pedimos un mensaje para mostrar
- * @return retorna el precio que ingresamos
+ * @return retorna el valor que ingresamos
  */
-float pedirPrecio(char* mensaje){
-	float precio;
+float pedirNumero(char* mensaje){
+	float numero;
 	printf("\n%s", mensaje);
-	scanf("\n%f", &precio);
-	while(precio<1){
+	scanf("\n%f", &numero);
+	while(numero<1){
 		printf("\nError, ingrese un valor mayor a 0");
-			scanf("\n%f", &precio);
+			scanf("\n%f", &numero);
 	}
-	return precio;
+	return numero;
 }
 
 // Calculamos el costo de AA y Latam, luego la diferencia de precio entre ambas //
@@ -110,7 +99,7 @@ float diferenciaPrecio(float precioLatam, float precioAa){
  */
 void mostrarCostos(float debitoLatam, float creditoLatam, float btcLatam, float precioXkmLatam, float debitoAa, float creditoAa, float btcAa, float precioXkmAa, float difPrecio){
 
-	printf("\nLatam:\n1)Precio con tarjeta de débito: $%f\n2)Precio con tarjeta de crédito: $%f\n3)Precio pagando con bitcoin: %f\n4)Precio unitario: $%f",debitoLatam, creditoLatam, btcLatam, precioXkmLatam);
-	printf("\nAalíneas:\n1)Precio con tarjeta de débito: $%f \n2)Precio con tarjeta de crédito: $%f \n3)Precio pagando con bitcoin : %f \n4)Precio unitario: $%f", debitoAa, creditoAa, btcAa, precioXkmAa);
-	printf("\nLa diferencia de precio es: %f ", difPrecio);
+	printf("\nLatam:\n\n1)Precio con tarjeta de débito: $%f\n2)Precio con tarjeta de crédito: $%f\n3)Precio pagando con bitcoin: %f\n4)Precio unitario: $%f",debitoLatam, creditoLatam, btcLatam, precioXkmLatam);
+	printf("\n\nAerolineas:\n\n1)Precio con tarjeta de débito: $%f \n2)Precio con tarjeta de crédito: $%f \n3)Precio pagando con bitcoin : %f \n4)Precio unitario: $%f", debitoAa, creditoAa, btcAa, precioXkmAa);
+	printf("\n\nLa diferencia de precio es: %f \n\n", difPrecio);
 }

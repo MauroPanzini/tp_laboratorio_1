@@ -22,14 +22,14 @@ int main(void) {
 			case 1:
 				if (flagCase1 == 1) {		//Case 1 pedimos ingresar los km
 					flagCase1 = 0;
-					km = pedirKm();
+					km = pedirNumero("Ingrese los km: ");
 				}
 					break;
 			case 2:							//Case 2 pedimos ingresar los precios de cada empresa
 				if (flagCase2 == 1) {
 					flagCase2 = 0;
-					precioAa = pedirPrecio("Ingrese el precio de Aerolineas Argentinas: ");
-					precioLatam = pedirPrecio("Ingrese el precio de Latam: ");
+					precioAa = pedirNumero("Ingrese el precio de Aerolineas Argentinas: ");
+					precioLatam = pedirNumero("Ingrese el precio de Latam: ");
 				}
 				break;
 			case 3:							//Case 3 hacemos las operaciones pertinentes en el orden que fueron dadas en la consigna
@@ -46,6 +46,7 @@ int main(void) {
 					precioXkmLatam = calcularCostos(precioLatam, km, 4);
 
 					difPrecio = diferenciaPrecio(precioLatam, precioAa);
+					printf("\n\n¡Operaciones realizadas con exito!\n\n");
 				}
 				break;
 			case 4:																//Case 4 mostramos los resultados de las operaciones del Case 3

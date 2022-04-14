@@ -14,8 +14,7 @@ int main(void) {
 	int flagCase1 = 1; //Estas flagas son para saber si ya se cargaron datos o no
 	int flagCase2 = 1; //En caso de haber cargado datos, la carga forzada no se puede utilizar
 	int flagCase3 = 1;
-	float precioAa, precioLatam;
-	float km, debitoAa, debitoLatam, creditoAa, creditoLatam, btcAa, btcLatam, precioXkmAa, precioXkmLatam, difPrecio;
+	float km, precioAa, precioLatam, debitoAa, debitoLatam, creditoAa, creditoLatam, btcAa, btcLatam, precioXkmAa, precioXkmLatam, difPrecio;
 		do{
 			opcion = menuPrincipal(flagCase2, precioAa, precioLatam);
 			switch(opcion){					//Este switch es el principal que recorre el menu de opciones

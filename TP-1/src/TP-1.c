@@ -14,10 +14,10 @@ int main(void) {
 	int flagCase1 = 1; //Estas flagas son para saber si ya se cargaron datos o no
 	int flagCase2 = 1; //En caso de haber cargado datos, la carga forzada no se puede utilizar
 	int flagCase3 = 1;
-	float km, precioAa, precioLatam, debitoAa, debitoLatam, creditoAa, creditoLatam, btcAa, btcLatam, precioXkmAa, precioXkmLatam, difPrecio;
+	float precioAa, precioLatam;
+	float km, debitoAa, debitoLatam, creditoAa, creditoLatam, btcAa, btcLatam, precioXkmAa, precioXkmLatam, difPrecio;
 		do{
-			printf("\nBienvenido a GagonetaTravel, por favor elija una opcion:\n1)Ingresar Kilometros\n2)Ingresar precio de vuelos\n3)Calcular costos\n4)Informar resultados\n5)Carga forzada de datos\n6)Salir\n");
-			scanf("\n%d", &opcion);
+			opcion = menuPrincipal(flagCase2, precioAa, precioLatam);
 			switch(opcion){					//Este switch es el principal que recorre el menu de opciones
 			case 1:
 				if (flagCase1 == 1) {		//Case 1 pedimos ingresar los km
@@ -33,7 +33,7 @@ int main(void) {
 				}
 				break;
 			case 3:							//Case 3 hacemos las operaciones pertinentes en el orden que fueron dadas en la consigna
-				if (flagCase3 == 1){
+				if (flagCase3 == 1 && flagCase2 == 0 && flagCase1 == 0){
 					flagCase3 = 0;
 					debitoAa = calcularCostos(precioAa, km, 1);
 					creditoAa = calcularCostos(precioAa, km, 2);
@@ -48,6 +48,9 @@ int main(void) {
 					difPrecio = diferenciaPrecio(precioLatam, precioAa);
 					printf("\n\n¡Operaciones realizadas con exito!\n\n");
 				}
+				else{
+					printf("\nNo hay informacion suficiente para realizar operaciones\n");
+					}
 				break;
 			case 4:																//Case 4 mostramos los resultados de las operaciones del Case 3
 				if (flagCase1 == 0 && flagCase2 == 0 && flagCase3 == 0) {

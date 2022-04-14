@@ -7,6 +7,7 @@
 
 #ifndef MENU_H_
 #define MENU_H_
+int menuPrincipal(int, float, float);
 float pedirNumero(char* mensaje);
 float calcularCostos(float precio, float km, int operacion);
 float diferenciaPrecio(float precioLatam, float precioAa);

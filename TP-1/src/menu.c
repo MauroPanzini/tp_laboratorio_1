@@ -10,6 +10,19 @@
 #include <string.h>
 #define UN_BTC 4606954.55
 
+int menuPrincipal(int flagCase, float aA, float latam){
+	int opcion;
+	if (flagCase == 1) {
+		printf("\nBienvenido a GagonetaTravel, por favor elija una opcion:\n1)Ingresar Kilometros\n2)Ingresar precio de vuelos\n3)Calcular costos\n4)Informar resultados\n5)Carga forzada de datos\n6)Salir\n");
+		scanf("\n%d", &opcion);
+	}
+	else{
+		printf("\nBienvenido a GagonetaTravel, por favor elija una opcion:\n1)Ingresar Kilometros\t\t\t\tEl precio de Aerolineas es: $%f\n2)Ingresar precio de vuelos\t\t\tEl precio de Latam es: $%f\n3)Calcular costos\n4)Informar resultados\n5)Carga forzada de datos\n6)Salir\n", aA, latam);
+		scanf("\n%d", &opcion);
+	}
+
+	return opcion;
+}
 
 // funcion para pedir datos numericos //
 
@@ -101,5 +114,5 @@ void mostrarCostos(float debitoLatam, float creditoLatam, float btcLatam, float 
 
 	printf("\nLatam:\n\n1)Precio con tarjeta de débito: $%f\n2)Precio con tarjeta de crédito: $%f\n3)Precio pagando con bitcoin: %f\n4)Precio unitario: $%f",debitoLatam, creditoLatam, btcLatam, precioXkmLatam);
 	printf("\n\nAerolineas:\n\n1)Precio con tarjeta de débito: $%f \n2)Precio con tarjeta de crédito: $%f \n3)Precio pagando con bitcoin : %f \n4)Precio unitario: $%f", debitoAa, creditoAa, btcAa, precioXkmAa);
-	printf("\n\nLa diferencia de precio es: %f \n\n", difPrecio);
+	printf("\n\nLa diferencia de precio es: $%f \n\n", difPrecio);
 }

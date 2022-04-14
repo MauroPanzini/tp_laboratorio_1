@@ -9,7 +9,13 @@
 #include <stdlib.h>
 #include <string.h>
 #define UN_BTC 4606954.55
-
+/**
+ * @brief	 		menu principal que toma la opcion elegida, y muestra el menu junto con los datos de las aerolineas
+ * @param flagCase 	sirve para saber si ya se ingreso un dato a la opcion 2
+ * @param aA 		le pasamos el precio de Aerolineas Argentinas para que lo muestre
+ * @param latam 	le pasamos el precio de Latam para que lo muestre
+ * @return 			retorna la opcione elegida
+ */
 int menuPrincipal(int flagCase, float aA, float latam){
 	int opcion;
 	if (flagCase == 1) {
@@ -27,9 +33,9 @@ int menuPrincipal(int flagCase, float aA, float latam){
 // funcion para pedir datos numericos //
 
 /**
- * @brief nos toma por consola el dato numerico mayor a 0
- * @param mensaje le pedimos un mensaje para mostrar
- * @return retorna el valor que ingresamos
+ * @brief 			 nos toma por consola el dato numerico mayor a 0
+ * @param mensaje	 le pedimos un mensaje para mostrar
+ * @return 			 retorna el valor que ingresamos
  */
 float pedirNumero(char* mensaje){
 	float numero;
@@ -44,11 +50,11 @@ float pedirNumero(char* mensaje){
 
 // Calculamos el costo de AA y Latam, luego la diferencia de precio entre ambas //
 /**
- * @brief calculas los costos de vuelo
- * @param precio le pasamos el precio de las aerolineas ingresado
- * @param km le pasamos los km ingresados
- * @param operacion le decimos qué operacion queremos hacer: 1)para debito 2) para credito 3)para btc 4)para el precio x km
- * @return retorna cada operacion que elijamos
+ * @brief 				calcula los costos de vuelo
+ * @param precio 		le pasamos el precio de las aerolineas ingresado
+ * @param km 			le pasamos los km ingresados
+ * @param operacion 	le decimos qué operacion queremos hacer: 1)para debito 2) para credito 3)para btc 4)para el precio x km
+ * @return retorna 		cada operacion que elijamos
  */
 float calcularCostos(float precio, float km, int operacion){
 
@@ -83,10 +89,10 @@ float calcularCostos(float precio, float km, int operacion){
 
 }
 /**
- * @brief calcula la diferencia de precio entre una aerolínea y la otra
- * @param precioLatam le pasamos el precio de latam
- * @param precioAa le pasamos el precio de AA
- * @return retorna el valor obtenido
+ * @brief 					calcula la diferencia de precio entre una aerolínea y la otra
+ * @param precioLatam 		le pasamos el precio de latam
+ * @param precioAa 			le pasamos el precio de AA
+ * @return 					retorna el valor obtenido
  */
 float diferenciaPrecio(float precioLatam, float precioAa){
 	float difPrecio;

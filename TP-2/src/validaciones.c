@@ -22,5 +22,6 @@ int pedirDatos(){
 	float price;
 	char flycode[10];
 	int typePassanger, statusFlight, isEmpty, id[2000], retorno;
+
 	return retorno;
 }
